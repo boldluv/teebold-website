@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Teebold Ventures - Wholesale Cway 75cl bottled water at unbeatable prices. Bulk orders, Lagos delivery, and WhatsApp ordering available.">
+  <meta name="keywords" content="Teebold Ventures, Cway water wholesale, 75cl bottle water, Lagos delivery, bottled water Nigeria">
+  <meta name="author" content="Teebold Ventures">
+  <title>Teebold Ventures | Wholesale Cway Water</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f0f8ff;
+      color: #333;
+    }
+    header {
+      background: #004080;
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      background-color: #e6f2ff;
+    }
+    .hero img {
+      max-width: 300px;
+      margin-bottom: 1rem;
+    }
+    .hero h2 {
+      font-size: 1.8rem;
+      color: #004080;
+    }
+    .description {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #ffffff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .order-form {
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .order-form input, .order-form button {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+    .whatsapp-btn img {
+      vertical-align: middle;
+      margin-right: 8px;
+      height: 20px;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    .whatsapp-float img {
+      margin-top: 15px;
+      height: 30px;
+    }
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+  <script>
+    function sendToWhatsApp() {
+      const name = document.getElementById('customerName').value;
+      const quantity = document.getElementById('quantity').value;
+      const pricePerPack = 1450;
+      const total = parseInt(quantity) * pricePerPack;
+      const address = document.getElementById('deliveryAddress').value;
+      const message = `Hi Teebold Ventures, my name is ${name}. I would like to order ${quantity} packs of Cway 75cl bottled water. Delivery address: ${address}. Total amount: ₦${total}. Payment will be made on delivery.`;
+      const url = `https://wa.me/2348056578354?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+
+    function shareToStatus() {
+      const message = `Teebold Ventures: Premium Cway 75cl Bottled Water now available at ₦1,450 per pack. Delivery available within Lagos. Order now! 📦💧\nWhatsApp: 08056578354`;
+      const shareUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+      window.open(shareUrl, '_blank');
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Teebold Ventures</h1>
+    <p>Your trusted wholesale distributor of Cway water</p>
+  </header>
+
+  <section class="hero">
+    <img src="/mnt/data/WhatsApp Image 2025-07-08 at 18.26.34_85e0ed1c.jpg" alt="Cway 75cl Bottle Water">
+    <h2>Wholesale Cway 75cl Bottle Water</h2>
+    <p>Hydration you can trust — now available at unbeatable wholesale prices.</p>
+
+    <p>
+      <strong>Teebold Ventures Account Details:</strong><br/>
+      Bank: Stanbic IBTC<br/>
+      Account Number: 0032611602<br/>
+      Account Name: Teebold Ventures<br/><br/>
+
+      Teebold Ventures proudly supplies Cway 75cl bottled water in packs, ideal for retailers, events, and corporate organizations.
+    </p>
+    <ul>
+      <li>Premium Purified Water</li>
+      <li>75cl Bottles in Sealed Packs</li>
+      <li>Bulk Order Discounts Available</li>
+      <li>Delivery Within Lagos and Other Locations on Request</li>
+      <li><strong>Price per pack: ₦1,450</strong></li>
+      <li>Payment on Delivery Available</li>
+      <li>Payment Terms: Cash, Transfer or POS on delivery</li>
+    </ul>
+
+    <div class="order-form">
+      <h4>Place Your Order</h4>
+      <input type="text" id="customerName" placeholder="Your Name" required />
+      <input type="text" id="deliveryAddress" placeholder="Your Delivery Address" required />
+      <input type="number" id="quantity" placeholder="Quantity in Packs" min="1" required />
+      <button onclick="sendToWhatsApp()">Submit Order via WhatsApp</button>
+      <button onclick="shareToStatus()">Share to WhatsApp Status</button>
+    </div>
+  </section>
+
+  <a class="whatsapp-float" href="https://wa.me/2348056578354" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <footer>
+    <p>© 2025 Teebold Ventures | Address: 14 Da-Silva Street, Carwash Bus Stop, Ijegun/Abaranje Road, Ikotun.<br/>
+    Contacts: 08027184419, 07085235355 | Email: <a href="mailto:olaboddy2@gmail.com">olaboddy2@gmail.com</a> | Website: <a href="https://www.google.com/search?q=Teebold+Ventures" target="_blank">Find us on Google</a></p>
+  </footer>
+
+</body>
+</html>
