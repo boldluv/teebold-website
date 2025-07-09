@@ -1,1 +1,257 @@
-# teebold-website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="TeeBold Ventures - Wholesale Cway 75cl bottled water at unbeatable prices. Bulk orders, Lagos delivery, and WhatsApp ordering available.">
+  <meta name="keywords" content="TeeBold Ventures, Cway water wholesale, 75cl bottle water, Lagos delivery, bottled water Nigeria">
+  <meta name="author" content="TeeBold Ventures">
+  <title>TeeBold Ventures | Wholesale Cway Water</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: #fff;
+      background-color: #000;
+      animation: bodyFade 20s infinite;
+    }
+
+    @keyframes bodyFade {
+      0%   { background-color: skyblue; }
+      33%  { background-color: navy; }
+      66%  { background-color: violet; }
+      100% { background-color: skyblue; }
+    }
+
+    header {
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+      background: linear-gradient(135deg, #00bfff, #1e3c72, #8a2be2);
+      background-size: 400% 400%;
+      animation: waterFlow 15s ease infinite, bounceHeader 3s ease-in-out infinite;
+    }
+
+    @keyframes waterFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes bounceHeader {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    header h1 {
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      animation: textGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes textGlow {
+      0%, 100% { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+      50% { text-shadow: 2px 2px 8px rgba(255,255,255,0.8); }
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      background-color: #222;
+    }
+
+    .hero img {
+      max-width: 300px;
+      margin-bottom: 1rem;
+      animation: pulseImage 5s infinite;
+    }
+
+    @keyframes pulseImage {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.9; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .hero h2 {
+      font-size: 1.8rem;
+      color: #66ccff;
+      animation: floatText 6s ease-in-out infinite;
+    }
+
+    @keyframes floatText {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .description {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #333;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      text-align: center;
+    }
+
+    .order-form {
+      margin-top: 2rem;
+      text-align: left;
+      animation: fadeInUp 4s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .order-form input, .order-form button {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    .whatsapp-btn img {
+      vertical-align: middle;
+      margin-right: 8px;
+      height: 20px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      z-index: 1000;
+      animation: bounceIcon 4s ease-in-out infinite;
+    }
+
+    @keyframes bounceIcon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .whatsapp-float img {
+      margin-top: 15px;
+      height: 30px;
+    }
+
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      animation: footerPulse 10s infinite;
+    }
+
+    @keyframes footerPulse {
+      0% { background-color: skyblue; }
+      50% { background-color: navy; }
+      100% { background-color: violet; }
+    }
+
+    footer p {
+      animation: footerFontGlow 5s infinite, fadeInUp 2s ease forwards;
+    }
+
+    footer a {
+      color: grey;
+      animation: footerFontGlow 5s infinite, flicker 3s linear infinite;
+    }
+
+    @keyframes footerFontGlow {
+      0% { color: #ccc; text-shadow: none; }
+      50% { color: white; text-shadow: 0 0 5px rgba(255,255,255,0.6); }
+      100% { color: #ccc; text-shadow: none; }
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        opacity: 0.4;
+      }
+    }
+  </style>
+  <script>
+    function sendToWhatsApp() {
+      const name = document.getElementById('customerName').value;
+      const quantity = parseInt(document.getElementById('quantity').value);
+      const address = document.getElementById('deliveryAddress').value;
+      let pricePerPack;
+      let total;
+      let message;
+
+      if (quantity >= 400) {
+        pricePerPack = 1400;
+        total = quantity * pricePerPack;
+        message = `Hi TeeBold Ventures, my name is ${name}. I would like to order ${quantity} packs of Cway 75cl bottled water at ₦1,400 per pack. Delivery address: ${address}. Total amount: ₦${total}. Payment will be made on delivery.`;
+      } else {
+        pricePerPack = 1450;
+        total = quantity * pricePerPack;
+        message = `Hi TeeBold Ventures, my name is ${name}. I would like to order ${quantity} packs of Cway 75cl bottled water at ₦1,450 per pack. Delivery address: ${address}. Total amount: ₦${total}. Payment will be made on delivery.`;
+      }
+
+      const url = `https://wa.me/2348056578354?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>TeeBold Ventures</h1>
+    <p>Your trusted wholesale distributor of Cway water</p>
+  </header>
+
+  <section class="hero">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/CWAY_Water_Bottle_75cl.jpg/300px-CWAY_Water_Bottle_75cl.jpg" alt="Cway 75cl Bottle Water">
+    <h2>Wholesale Cway 75cl Bottle Water</h2>
+    <p>Hydration you can trust — now available at unbeatable wholesale prices.</p>
+
+    <p>
+      <strong>TeeBold Ventures Account Details:</strong><br/>
+      Bank: Stanbic IBTC<br/>
+      Account Number: 0032611602<br/>
+      Account Name: TeeBold Ventures<br/><br/>
+
+      TeeBold Ventures proudly supplies Cway 75cl bottled water in packs, ideal for retailers, events, and corporate organizations.
+    </p>
+    <ul>
+      <li>✔ Premium Purified Water</li>
+      <li>✔ 75cl Bottles in Sealed Packs</li>
+      <li>✔ Bulk Order Discounts Available</li>
+      <li>✔ Delivery Within Lagos and Other Locations on Request</li>
+      <li>✔ <strong>Price per pack: ₦1,450</strong> <br/> ✔ <strong>Discount Price: ₦1,400 per pack for orders of 400 packs and above</strong></li>
+      <li>✔ Payment on Delivery Available</li>
+      <li>✔ Payment Terms: Cash, Transfer or POS on delivery</li>
+    </ul>
+
+    <div class="order-form">
+      <h4>Place Your Order</h4>
+      <input type="text" id="customerName" placeholder="Your Name" required />
+      <input type="text" id="deliveryAddress" placeholder="Your Delivery Address" required />
+      <input type="number" id="quantity" placeholder="Quantity in Packs" min="1" required />
+      <button onclick="sendToWhatsApp()">Submit Order via WhatsApp</button>
+    </div>
+  </section>
+
+  <a class="whatsapp-float" href="https://wa.me/2348056578354" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <footer>
+    <p>© 2025 TeeBold Ventures | Address: 14 Da-Silva Street, Carwash Bus Stop, Ijegun/Abaranje Road, Ikotun.<br/>
+    Contacts: 08027184419, 07085235355 | Email: <a href="mailto:olaboddy2@gmail.com">olaboddy2@gmail.com</a> | Website: <a href="https://www.google.com/search?q=TeeBold+Ventures" target="_blank">Find us on Google</a></p>
+  </footer>
+</body>
+</html>
